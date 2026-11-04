@@ -1,0 +1,147 @@
+
+body {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.hello {
+    border: 2px solid;
+    border-color: ivory;
+    padding: 30px 15px;
+    cursor: pointer;
+    box-shadow: 0 6px 4px rgba(248, 244, 244, 0.2);
+    transition: box-shadow 0.3s ease, background .3s linear;
+    width: 450px;
+    margin:10px;
+    background-color: rgb(241, 130, 130);
+    color: white;
+    font-size: 2.5em;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.shine{
+    position: absolute;
+    top: 0;
+    left: -100px;
+    height: 100%;
+    width: 70px;
+    background: linear-gradient(
+    90deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0.6) 50%, 
+    rgba(255,255,255,0) 100%
+  );
+    opacity: 75%;
+    transform: skewX(-20deg);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hello:hover .shine {
+    transform: skewX(-20deg) translateX(1200px);
+    transition: transform .75s ease-in-out;
+    animation: shine .75s ease-in-out forwards
+}
+
+@keyframes shine{
+    from {
+        left:-100px;
+    }
+    to{
+        left:calc(100% + 100px)
+    }
+}
+
+.hello:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+a{
+    text-decoration: none;
+}
+
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 25px;
+}
+
+.grid-container div:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 ;
+    align-items: center;
+}
+
+.welcome-text{
+    border: 2px solid black;
+      background: linear-gradient(
+        110deg,
+        rgb(248, 130, 130) 30%,
+        #ffd6d6 50%,
+        rgb(248, 130, 130) 70%
+    );
+    background-size: 200% 100%;
+    padding: 30px;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 2.5em;
+    position: relative;
+    animation: boxShimmer 3s linear infinite;
+    
+}
+@keyframes boxShimmer {
+    from {
+        background-position: 100% 0;
+    }
+    to {
+        background-position: -100% 0;
+    }
+}
+
+.sparkle {
+    display: inline-block;
+    color: #ffe6a7;
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.sparkle-one {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.sparkle-two {
+    font-size: 30px;
+    margin-left: 10px;
+    animation-delay: 0.7s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.6) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5) rotate(180deg);
+    }
+}
